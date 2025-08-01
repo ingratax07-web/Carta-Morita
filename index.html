@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Morita 💜</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffe4ec, #ffeef7);
+      background-image: url('https://i.imgur.com/JZiMWMM.png'); /* fondo corazones */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .frase {
+      font-size: 1.4em;
+      color: #a9005e;
+      margin-bottom: 15px;
+      padding: 0 20px;
+      text-shadow: 1px 1px 2px white;
+    }
+
+    .sobre {
+      width: 120px;
+      height: 100px;
+      background: #ffb6c1;
+      position: relative;
+      cursor: pointer;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .sobre:hover {
+      transform: scale(1.05);
+    }
+
+    .solapa {
+      width: 0;
+      height: 0;
+      border-left: 60px solid transparent;
+      border-right: 60px solid transparent;
+      border-bottom: 50px solid #ff69b4;
+      position: absolute;
+      top: -50px;
+      left: 0;
+    }
+
+    .carta {
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 400px;
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 10;
+    }
+
+    .carta img {
+      width: 90px;
+      margin: 10px auto;
+      display: block;
+    }
+
+    .texto-carta {
+      font-size: 1em;
+      color: #333;
+      line-height: 1.5;
+      white-space: pre-line;
+    }
+
+    audio {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .frase {
+        font-size: 1.2em;
+      }
+      .sobre {
+        width: 100px;
+        height: 80px;
+      }
+      .solapa {
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 40px solid #ff69b4;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="frase">Para usted niña de ojitos chiquititos<br><small>Haga clic en el sobre para su sorpresa</small></div>
+
+  <div class="sobre" onclick="abrirCarta()">
+    <div class="solapa"></div>
+  </div>
+
+  <div class="carta" id="carta">
+    <img src="https://i.imgur.com/6mbHdFU.png" alt="Polar y Panda mirándose">
+    <div class="texto-carta">
+      Para usted, Morita 💜
+
+A veces me resulta difícil poner en palabras todo lo que usted me hace sentir… pero basta con pensarle un momento para que mi corazón se llene de paz, de ternura y de sonrisa, que solo usted logra despertar.
+
+Usted es esa personita especial que con su sola existencia da sentido a mis días.
+
+Gracias por estar, por ser, por quedarse.  
+La quiero con el alma, Morita… y siempre voy a quererle bonito.
+
+Con todo mi cariño,  
+Ingratax 💜
+    </div>
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Scott_Holmes_Music/Romantic_Piano/Scott_Holmes_Music_-_Love_Theme.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function abrirCarta() {
+      document.getElementById('carta').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
